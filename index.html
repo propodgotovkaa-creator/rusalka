@@ -1,1 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#146e79">
+  <meta name="description" content="Волшебная подводная игра: создай свадебные образы русалки и русала и устрой их жемчужную свадьбу.">
+  <title>Жемчужная свадьба — игра про русалок</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Жемчужная свадьба"><span class="brand-shell">♧</span><span>жемчужная<span class="brand-small">СВАДЬБА</span></span></a>
+      <nav class="steps" aria-label="Этапы игры">
+        <button class="step active" data-step="0"><span>1</span> Невеста</button><i></i>
+        <button class="step" data-step="1"><span>2</span> Жених</button><i></i>
+        <button class="step" data-step="2"><span>3</span> Церемония</button>
+      </nav>
+      <div class="header-actions"><button class="round-button" id="sound" aria-label="Включить музыку" title="Музыка">♫</button><button class="round-button" id="help" aria-label="Как играть" title="Как играть">?</button></div>
+    </header>
 
+    <main class="studio" id="studio">
+      <section class="ocean" aria-label="Примерочная русалки">
+        <div class="ocean-art"></div><div class="rays"></div><div class="bubbles" aria-hidden="true"></div>
+        <div class="scene-heading"><span class="eyebrow">ЛЮБОВЬ ГЛУБЖЕ ОКЕАНА</span><h1 id="scene-title">Самая волшебная<br>невеста — твоя.</h1><p id="scene-subtitle">Создай образ для её особенного дня</p></div>
+        <div class="fish fish-one" aria-hidden="true">⋖</div><div class="fish fish-two" aria-hidden="true">⋖</div>
+        <div class="character-wrap" id="character"></div>
+        <div class="character-tag"><span class="tag-star">✧</span><span id="character-name">Луна</span><span class="tag-line"></span><span id="character-role">невеста океана</span></div>
+        <div class="scene-actions"><button class="glass-button" id="randomize">✧ <span>Волшебный образ</span></button><button class="glass-button" id="undo" aria-label="Отменить последнее изменение" title="Отменить">↶</button></div>
+        <span class="scene-note">Каждая история любви начинается с тебя</span>
+      </section>
+
+      <aside class="wardrobe" aria-label="Гардероб">
+        <div class="wardrobe-heading"><div><span class="eyebrow plum">ТВОЯ МАЛЕНЬКАЯ МАГИЯ</span><h2>Создай её образ</h2></div><span class="wardrobe-sparkle">✧</span></div>
+        <div class="category-tabs" id="categories" role="tablist" aria-label="Категории наряда"></div>
+        <div class="wardrobe-scroll" id="wardrobe-scroll"><div id="options" role="tabpanel" tabindex="0"></div></div>
+        <div class="wardrobe-footer"><div class="saved"><span></span><span id="save-status">Образ сохраняется автоматически</span></div><button class="primary-button" id="next">Нарядить жениха <span>→</span></button><p>Детали можно поменять в любой момент</p></div>
+      </aside>
+    </main>
+
+    <main class="ceremony hidden" id="ceremony">
+      <div class="ocean-art"></div><div class="rays"></div><div class="bubbles" aria-hidden="true"></div><div id="confetti" aria-hidden="true"></div>
+      <div class="ceremony-title"><span class="eyebrow">ДВА СЕРДЦА. ОДИН ОКЕАН.</span><h1>Луна <em>&</em> Кай</h1><p id="vow-text" aria-live="polite">Всё готово к вашей подводной свадьбе</p></div>
+      <div class="wedding-arch" aria-hidden="true"><span>✿</span><span>✿</span><span>✿</span><span>✿</span><span>✿</span><span>✿</span><span>✿</span></div>
+      <div class="couple"><div id="bride-final"></div><div id="groom-final"></div></div>
+      <div class="wedding-controls"><button class="glass-button" id="back">← В примерочную</button><button class="primary-button" id="marry">♡ Сказать «Да!»</button><button class="glass-button" id="photo">↓ Свадебная открытка</button></div>
+    </main>
+  </div>
+  <dialog id="help-dialog"><button class="dialog-close" aria-label="Закрыть">×</button><span class="dialog-shell">✧</span><h2>Ваша подводная сказка</h2><p>Сначала наряди Луну, потом — Кая. Нажимай на категории, выбирай причёски и наряды, пробуй цвета и добавляй украшения.</p><p>Кнопка «Волшебный образ» придумает сочетание за тебя. На церемонии скажи «Да!» и сохрани свадебную открытку.</p><p class="small">Образы сохраняются в этом браузере. Музыку можно включить кнопкой ♫. Играть можно мышкой, касанием или клавиатурой.</p><button class="primary-button" id="help-done">Начать волшебство →</button></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="art.js"></script>
+  <script src="groom.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
